@@ -1,0 +1,18 @@
+specVersion: 0.0.1
+description: index auctions
+repository: 'https://github.com/jiqiang90/index-auction'
+schema: ./schema.graphql
+network:
+  endpoint: 'wss://rococo-rpc.polkadot.io/'
+dataSources:
+  - name: main
+    kind: substrate/Runtime
+    startBlock: 357200
+    mapping:
+      handlers:
+        - handler: handleAuction
+          kind: substrate/EventHandler
+          filter:
+            module: auctions
+            method: BidAccepted
+

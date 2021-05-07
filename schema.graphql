@@ -1,0 +1,13 @@
+type Auction @entity {
+
+  id: ID! #id is a required field
+
+  bidder: String!
+
+  balance: BigInt!
+
+  leaseStart: Int!
+
+  leaseEnd: Int!
+
+}
